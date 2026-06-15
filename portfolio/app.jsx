@@ -80,7 +80,7 @@ function Websites() {
                 <span className="wb-dot" style={{ background: 'var(--cream)' }}></span>
                 <span className="wb-dot" style={{ background: 'var(--mint)' }}></span>
               </div>
-              <image-slot id={w.slot} shape="rect" placeholder="drop a screenshot" style={{ display: 'block', width: '100%', height: '172px', background: 'var(--bg)' }}></image-slot>
+              <img className="web-img" src={w.image} alt={w.name + ' screenshot'} loading="lazy" />
             </div>
             <div className="web-body">
               <div className="web-top"><Pill c={w.pill} s={18} /><span className="web-name">{w.name}</span></div>

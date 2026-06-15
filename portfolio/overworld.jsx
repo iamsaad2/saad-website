@@ -220,6 +220,12 @@
     const flip = face === 'left' ? 'scaleX(-1)' : 'none';
     const press = (dir, v) => (e) => {
       keys.current[dir] = v;
+      if (e.currentTarget) {
+        if (v && e.currentTarget.setPointerCapture && e.pointerId !== undefined) {
+          try { e.currentTarget.setPointerCapture(e.pointerId); } catch (_) {}
+        }
+        e.currentTarget.blur();
+      }
       e.preventDefault();
     };
 
@@ -269,12 +275,12 @@
 
         <div className="ow-touch">
           <div className="ow-dpad">
-            <button className="ow-dbtn ow-up" onPointerDown={press('up', true)} onPointerUp={press('up', false)} onPointerCancel={press('up', false)} onPointerLeave={press('up', false)} aria-label="up">▲</button>
-            <button className="ow-dbtn ow-left" onPointerDown={press('left', true)} onPointerUp={press('left', false)} onPointerCancel={press('left', false)} onPointerLeave={press('left', false)} aria-label="left">◀</button>
-            <button className="ow-dbtn ow-right" onPointerDown={press('right', true)} onPointerUp={press('right', false)} onPointerCancel={press('right', false)} onPointerLeave={press('right', false)} aria-label="right">▶</button>
-            <button className="ow-dbtn ow-down" onPointerDown={press('down', true)} onPointerUp={press('down', false)} onPointerCancel={press('down', false)} onPointerLeave={press('down', false)} aria-label="down">▼</button>
+            <button className="ow-dbtn ow-up" onPointerDown={press('up', true)} onPointerUp={press('up', false)} onPointerCancel={press('up', false)} onPointerLeave={press('up', false)} onContextMenu={(e) => e.preventDefault()} aria-label="up">▲</button>
+            <button className="ow-dbtn ow-left" onPointerDown={press('left', true)} onPointerUp={press('left', false)} onPointerCancel={press('left', false)} onPointerLeave={press('left', false)} onContextMenu={(e) => e.preventDefault()} aria-label="left">◀</button>
+            <button className="ow-dbtn ow-right" onPointerDown={press('right', true)} onPointerUp={press('right', false)} onPointerCancel={press('right', false)} onPointerLeave={press('right', false)} onContextMenu={(e) => e.preventDefault()} aria-label="right">▶</button>
+            <button className="ow-dbtn ow-down" onPointerDown={press('down', true)} onPointerUp={press('down', false)} onPointerCancel={press('down', false)} onPointerLeave={press('down', false)} onContextMenu={(e) => e.preventDefault()} aria-label="down">▼</button>
           </div>
-          <button className="ow-abtn" onClick={() => enter()} aria-label="enter">A</button>
+          <button className="ow-abtn" onClick={() => enter()} onContextMenu={(e) => e.preventDefault()} aria-label="enter">A</button>
         </div>
       </div>
     );

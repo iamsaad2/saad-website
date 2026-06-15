@@ -33,26 +33,31 @@ window.SAAD_DATA = {
       name: 'Primary Site Predictor',
       desc: 'Predicts the likely primary cancer based on where the disease has metastasized.',
       tags: ['ML', 'Oncology'], status: 'Live', pill: 'coral', slot: 'web-1', url: 'https://metspredictor.netlify.app/',
+      image: 'portfolio/assets/website-screenshots/primary-site-predictor.png',
     },
     {
       name: 'Metastasis Predictor',
       desc: 'Predicts where a cancer is likely to spread based on the primary site.',
       tags: ['ML', 'Oncology'], status: 'Live', pill: 'mint', slot: 'web-2', url: 'https://metspredictor.netlify.app/',
+      image: 'portfolio/assets/website-screenshots/metastasis-predictor.png',
     },
     {
       name: 'Nodal Survival',
       desc: 'Estimates 1-, 5-, and 10-year survival based on lymph-node status.',
       tags: ['ML', 'Survival'], status: 'Live', pill: 'sky', slot: 'web-3', url: 'https://nodalsurvival.netlify.app/',
+      image: 'portfolio/assets/website-screenshots/nodal-survival.png',
     },
     {
       name: 'Cancer Survival Predictor',
       desc: 'Predicts 1-, 5-, and 10-year survival from common clinical characteristics, by cancer type.',
       tags: ['ML', 'Survival'], status: 'Live', pill: 'lav', slot: 'web-4', url: 'https://cancer-survival-predictor.netlify.app/',
+      image: 'portfolio/assets/website-screenshots/cancer-survival-predictor.png',
     },
     {
       name: 'NEOMED Research Forum',
       desc: 'An oral research forum at NEOMED where medical students presented their work.',
       tags: ['Event', 'Med-Ed'], status: 'Live', pill: 'coral', slot: 'web-5', url: 'https://neomedresearchforum.netlify.app/',
+      image: 'portfolio/assets/website-screenshots/neomed-research-forum.png',
     },
   ],
 

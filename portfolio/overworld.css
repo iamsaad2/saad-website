@@ -287,3 +287,34 @@
     flex: 0 0 auto;
   }
 }
+
+
+/* no mobile button blue highlight */
+.ow-touch,
+.ow-dpad,
+.ow-dbtn,
+.ow-abtn {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.ow-dbtn,
+.ow-abtn {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.ow-dbtn:focus,
+.ow-dbtn:focus-visible,
+.ow-abtn:focus,
+.ow-abtn:focus-visible {
+  outline: none;
+}
+
+.ow-dbtn::selection,
+.ow-abtn::selection {
+  background: transparent;
+}
