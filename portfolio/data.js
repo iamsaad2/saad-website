@@ -10,7 +10,7 @@ window.SAAD_DATA = {
     interests: "Oncology · Cardiology · ML in medicine",
     bio: [
       "Hello — my name is Saad Badat and I’m a medical student at NEOMED.",
-      "Most of my work lives at the intersection of oncology, cardiology, and machine learning — building tools that make clinicians faster.",
+      "Most of my work sits between oncology, cardiology, and machine learning, where I build tools that help clinicians work faster.",
     ],
     stats: [
       ["MANUSCRIPTS", "01"],
