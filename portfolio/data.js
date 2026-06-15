@@ -93,12 +93,27 @@ window.SAAD_DATA = {
   contact: [
     {
       label: "Email",
-      value: "saad@example.com",
+      value: "sbadat@neomed.edu",
       pill: "coral",
-      link: "mailto:saad@example.com",
+      link: "mailto:sbadat@neomed.edu",
     },
-    { label: "GitHub", value: "github.com/saad", pill: "mint", link: "#" },
-    { label: "Scholar", value: "Google Scholar", pill: "sky", link: "#" },
-    { label: "LinkedIn", value: "in/saad", pill: "lav", link: "#" },
+    {
+      label: "GitHub",
+      value: "github.com/iamsaad2",
+      pill: "mint",
+      link: "https://github.com/iamsaad2",
+    },
+    {
+      label: "Scholar",
+      value: "Google Scholar",
+      pill: "sky",
+      link: "https://scholar.google.com/citations?user=nu0MAoAAAAAJ&hl=en",
+    },
+    {
+      label: "LinkedIn",
+      value: "in/saad-badat",
+      pill: "lav",
+      link: "https://www.linkedin.com/in/saad-badat-461a38188/",
+    },
   ],
 };

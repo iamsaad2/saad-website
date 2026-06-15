@@ -3,7 +3,58 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SAAD · Portfolio</title>
+
+<!-- Primary SEO -->
+<title>Saad Badat — Medical Student &amp; Researcher</title>
+<meta name="description" content="Saad Badat is a medical student and researcher at NEOMED focused on oncology, cardiology, and machine learning in medicine — building clinical tools and publishing research." />
+<meta name="author" content="Saad Badat" />
+<meta name="keywords" content="Saad Badat, Saad Badat NEOMED, Saad Badat medical student, Saad Badat researcher, oncology, cardiology, machine learning in medicine" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#1a1a2e" />
+<link rel="canonical" href="https://saadbadat.me/" />
+
+<!-- Open Graph (Facebook, LinkedIn, iMessage) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Saad Badat" />
+<meta property="og:title" content="Saad Badat — Medical Student &amp; Researcher" />
+<meta property="og:description" content="Medical student and researcher at NEOMED. Oncology, cardiology, and machine learning in medicine." />
+<meta property="og:url" content="https://saadbadat.me/" />
+<meta property="og:image" content="https://saadbadat.me/portfolio/assets/doctor.png" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Saad Badat — Medical Student &amp; Researcher" />
+<meta name="twitter:description" content="Medical student and researcher at NEOMED. Oncology, cardiology, and machine learning in medicine." />
+<meta name="twitter:image" content="https://saadbadat.me/portfolio/assets/doctor.png" />
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="portfolio/assets/doctor.png" />
+<link rel="apple-touch-icon" href="portfolio/assets/doctor.png" />
+
+<!-- Structured data: helps Google associate this site with the name "Saad Badat" -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saad Badat",
+  "url": "https://saadbadat.me/",
+  "image": "https://saadbadat.me/portfolio/assets/doctor.png",
+  "jobTitle": "Medical Student & Researcher",
+  "description": "Medical student and researcher at NEOMED focused on oncology, cardiology, and machine learning in medicine.",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Northeast Ohio Medical University (NEOMED)"
+  },
+  "knowsAbout": ["Oncology", "Cardiology", "Machine Learning in Medicine", "Clinical Research"],
+  "email": "mailto:sbadat@neomed.edu",
+  "sameAs": [
+    "https://www.linkedin.com/in/saad-badat-461a38188/",
+    "https://scholar.google.com/citations?user=nu0MAoAAAAAJ&hl=en",
+    "https://github.com/iamsaad2"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
@@ -12,6 +63,16 @@
 <link rel="stylesheet" href="portfolio/overworld.css" />
 </head>
 <body class="app-body">
+<!-- Crawlable content fallback: the portfolio renders via JS, so this gives
+     search engines & crawlers real text even before/without script execution. -->
+<noscript>
+  <h1>Saad Badat</h1>
+  <p>Medical Student &amp; Researcher at NEOMED (Northeast Ohio Medical University).</p>
+  <p>Saad Badat's work lives at the intersection of oncology, cardiology, and machine
+     learning — building tools that make clinicians faster. First author on
+     "Trends in Long-Term Survival Among Patients With De Novo Metastatic Cancer"
+     (JCO Oncology Practice, 2025).</p>
+</noscript>
 <div id="root"></div>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
