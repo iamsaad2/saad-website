@@ -111,9 +111,9 @@ function About() {
             <span className="vt" style={{ fontSize: 20, opacity: .7 }}>No. {p.cardNo}</span>
           </div>
           <div className="p8-card-body">
-            <div className="p8-card-photo"><img src={IMG + 'doctor.png'} alt="Saad" className="p8-px" style={{ width: 116 }} /></div>
+            <div className="p8-card-photo"><img src={IMG + 'doctor.png'} alt="Saad Badat" className="p8-px" style={{ width: 116 }} /></div>
             <div className="p8-card-info">
-              <div className="ps" style={{ fontSize: 20 }}>SAAD</div>
+              <div className="ps" style={{ fontSize: 20 }}>SAAD BADAT</div>
               <div className="vt p8-card-role">Medical Student · Researcher</div>
               <div className="p8-stats">
                 {p.stats.map(([k, v]) => (
@@ -195,7 +195,7 @@ function App() {
     <div className="app p8-tile">
       <div className="p8-hud app-hud">
         <div className="p8-hud-l">
-          <span className="ps" style={{ fontSize: 13 }}>SAAD</span>
+          <span className="ps" style={{ fontSize: 13 }}>SAAD BADAT</span>
           <span className="p8-hud-sep">▸</span>
           <span className="vt p8-hud-sub">{crumb}</span>
         </div>

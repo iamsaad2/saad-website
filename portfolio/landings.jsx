@@ -38,7 +38,7 @@ function LandingA() {
       <div className="p8-stage">
         <Pill c="mint" s={26} style={{ position: 'absolute', left: '24%', top: 40 }} />
         <Pill c="sky" s={22} style={{ position: 'absolute', right: '26%', top: 70 }} />
-        <img src={IMG + 'doctor.png'} alt="Saad" className="p8-px p8-bob" style={{ width: 132, height: 'auto' }} />
+        <img src={IMG + 'doctor.png'} alt="Saad Badat" className="p8-px p8-bob" style={{ width: 132, height: 'auto' }} />
         <div className="p8-shadow"></div>
       </div>
       <div className="p8-dialog">
@@ -70,7 +70,7 @@ function LandingB() {
       <div className="p8-menu-wrap">
         <div className="p8-menu-aside">
           <div className="p8-photo">
-            <img src={IMG + 'doctor.png'} alt="Saad" className="p8-px" style={{ width: 92, height: 'auto' }} />
+            <img src={IMG + 'doctor.png'} alt="Saad Badat" className="p8-px" style={{ width: 92, height: 'auto' }} />
           </div>
           <div className="ps" style={{ fontSize: 12, marginTop: 14 }}>SAAD</div>
           <p className="vt" style={{ fontSize: 21, lineHeight: 1.15, marginTop: 8, opacity: .8 }}>
@@ -109,7 +109,7 @@ function LandingC() {
         </div>
         <div className="p8-card-body">
           <div className="p8-card-photo">
-            <img src={IMG + 'doctor.png'} alt="Saad" className="p8-px" style={{ width: 116, height: 'auto' }} />
+            <img src={IMG + 'doctor.png'} alt="Saad Badat" className="p8-px" style={{ width: 116, height: 'auto' }} />
           </div>
           <div className="p8-card-info">
             <div className="ps" style={{ fontSize: 20 }}>SAAD</div>
@@ -149,7 +149,7 @@ function LandingD() {
       <div className="ps p8-press">
         <span className="p8-blink">PRESS START</span>
       </div>
-      <div className="vt p8-title-foot">a portfolio of manuscripts &amp; projects · © Saad ’26</div>
+      <div className="vt p8-title-foot">a portfolio of manuscripts &amp; projects · © Saad Badat ’26</div>
     </div>
   );
 }

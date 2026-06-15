@@ -251,7 +251,7 @@
             <div className={'ow-player' + (walking ? ' is-walk' : '')} ref={playerRef}
               style={{ width: PW, height: PH, transform: 'translate3d(' + posRef.current.x + 'px,' + posRef.current.y + 'px,0)' }}>
               <div className="ow-shadow"></div>
-              <img src={IMG + sprite} alt="Saad" className="p8-px ow-player-img" style={{ transform: flip }} />
+              <img src={IMG + sprite} alt="Saad Badat" className="p8-px ow-player-img" style={{ transform: flip }} />
             </div>
           </div>
         </div>
