@@ -1,0 +1,289 @@
+/* overworld.css — Twinleaf-style walkable town + original home menu */
+
+.app-main-ow {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.ow-home {
+  display: grid;
+  grid-template-columns: minmax(360px, 510px) 390px;
+  align-items: center;
+  justify-content: center;
+  gap: 112px;
+  width: min(100%, 1010px);
+  margin: 0 auto;
+}
+
+.ow-fit {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.ow-stage {
+  position: relative;
+  width: 510px;
+  height: 475px;
+  flex: 0 0 auto;
+  transform-origin: top center;
+  image-rendering: pixelated;
+  border: 4px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px var(--panel), 0 0 0 8px var(--ink), 0 13px 0 -5px rgba(63,59,87,.14);
+  overflow: hidden;
+  background: #9ede88;
+  contain: layout paint style;
+}
+
+.ow-mapbg {
+  position: absolute;
+  inset: 0;
+  background: url('assets/twinleaf-reference-map.png') 0 0 / 510px 475px no-repeat;
+  image-rendering: pixelated;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ow-door-target {
+  position: absolute;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ow-door-target.is-near::after,
+.ow-door-target:hover::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 18px;
+  height: 12px;
+  transform: translate(-50%, -10%);
+  border: 2px dashed rgba(63,59,87,.72);
+  border-radius: 3px;
+  background: rgba(255,255,255,.12);
+}
+
+.ow-main-menu {
+  width: 100%;
+  max-width: 390px;
+  align-self: center;
+  justify-self: center;
+  padding: 12px 14px 16px;
+}
+
+.ow-main-menu .p8-menu-title {
+  font-size: 11px;
+  color: var(--ink-soft);
+  padding: 8px 12px 14px;
+}
+
+.ow-main-menu .p8-mi {
+  min-height: 76px;
+}
+
+.ow-prompt {
+  position: absolute;
+  left: 50%;
+  top: -28px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 80;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  color: var(--ink);
+  background: var(--cream);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  padding: 5px 8px;
+  box-shadow: 2px 2px 0 var(--ink);
+  white-space: nowrap;
+  animation: owprompt .9s steps(2) infinite;
+}
+
+.ow-prompt::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--ink);
+}
+
+.ow-prompt-cur { color: var(--coral); }
+@keyframes owprompt { 50% { transform: translateX(-50%) translateY(-3px); } }
+
+.ow-player {
+  position: absolute;
+  left: 0;
+  top: 0;
+  will-change: transform;
+  z-index: 340;
+}
+
+.ow-player-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 34px;
+  height: auto;
+}
+
+.ow-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: 1px;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 7px;
+  background: rgba(40,60,40,.26);
+  border-radius: 50%;
+}
+
+.ow-player.is-walk .ow-player-img { animation: owbob .26s steps(2) infinite; }
+@keyframes owbob { 50% { bottom: 3px; } }
+
+.ow-touch {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 22px;
+  pointer-events: none;
+  z-index: 999;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.ow-dpad {
+  position: relative;
+  width: 144px;
+  height: 144px;
+  pointer-events: auto;
+}
+
+.ow-dbtn, .ow-abtn {
+  font-family: 'Press Start 2P', monospace;
+  color: var(--ink);
+  background: var(--panel);
+  border: 3px solid var(--ink);
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+
+.ow-dbtn {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ow-dbtn:active { box-shadow: 1px 1px 0 var(--ink); transform: translate(2px,2px); }
+.ow-up { left: 48px; top: 0; }
+.ow-down { left: 48px; top: 96px; }
+.ow-left { left: 0; top: 48px; }
+.ow-right { left: 96px; top: 48px; }
+
+.ow-abtn {
+  pointer-events: auto;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  font-size: 22px;
+  background: var(--coral);
+  margin-bottom: 28px;
+}
+
+.ow-abtn:active { box-shadow: 1px 1px 0 var(--ink); transform: translate(2px,2px); }
+@media (pointer: coarse), (max-width: 900px) { .ow-touch { display: flex; } }
+
+@media (max-width: 900px) {
+  .ow-home {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 18px;
+    max-width: 420px;
+  }
+  .ow-fit { order: 1; width: 100%; }
+  .ow-touch {
+    order: 2;
+    position: static;
+    display: flex;
+    width: min(100%, 390px);
+    margin: 0 auto;
+    padding: 0 6px;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: auto;
+    z-index: auto;
+  }
+  .ow-main-menu {
+    order: 3;
+    max-width: 390px;
+    width: min(100%, 390px);
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .app-main-ow {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 14px;
+  }
+  .ow-home {
+    max-width: 100%;
+    gap: 14px;
+  }
+  .ow-main-menu {
+    padding: 10px 12px 12px;
+  }
+  .ow-main-menu .p8-menu-title {
+    padding: 6px 8px 10px;
+  }
+  .ow-main-menu .p8-mi {
+    min-height: 54px;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .ow-main-menu .p8-mi-k { font-size: 20px; }
+  .ow-main-menu .p8-mi-note { font-size: 16px; }
+  .ow-dpad {
+    width: 126px;
+    height: 126px;
+    flex: 0 0 auto;
+  }
+  .ow-dbtn {
+    width: 42px;
+    height: 42px;
+    font-size: 13px;
+  }
+  .ow-up { left: 42px; top: 0; }
+  .ow-down { left: 42px; top: 84px; }
+  .ow-left { left: 0; top: 42px; }
+  .ow-right { left: 84px; top: 42px; }
+  .ow-abtn {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0;
+    flex: 0 0 auto;
+  }
+}

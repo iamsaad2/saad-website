@@ -105,7 +105,7 @@ html, body { margin: 0; background: #f0eee9; }
 .p8-mi-note { font-size: 21px; color: var(--ink-soft); white-space: nowrap; flex: 0 0 auto; }
 
 /* ---- C · resident card ---- */
-.p8-card { width: 640px; padding: 0; overflow: hidden; }
+.p8-card { width: min(100%, 640px); padding: 0; overflow: hidden; }
 .p8-card-top {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 22px; background: var(--coral); border-bottom: 4px solid var(--ink); color: var(--ink);

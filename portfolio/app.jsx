@@ -1,4 +1,4 @@
-// app.jsx — Saad's interactive 8-bit portfolio (START-menu navigation).
+// app.jsx — Saad's interactive 8-bit portfolio (walkable overworld home, see overworld.jsx).
 const { useState, useEffect, useRef } = React;
 const D = window.SAAD_DATA;
 const IMG = 'portfolio/assets/';
@@ -29,41 +29,7 @@ function Tag({ type }) {
   return <span className="tag"><Pill c={TYPE_PILL[type] || 'coral'} s={16} /> {type.toUpperCase()}</span>;
 }
 
-const MENU = [
-  { id: 'manuscripts', label: 'MANUSCRIPTS', icon: 'icon-manuscript', note: D.manuscripts.length + ' papers' },
-  { id: 'websites', label: 'WEBSITES', icon: 'icon-web', note: D.websites.length + ' built' },
-  { id: 'about', label: 'ABOUT', icon: 'icon-cross', note: 'the student' },
-  { id: 'contact', label: 'CONTACT', icon: null, pill: 'lav', note: 'say hi' },
-];
-
-// ---- HOME ----
-function Home({ sel, setSel, go }) {
-  return (
-    <div className="view">
-      <div className="home-wrap">
-        <div className="home-aside">
-          <div className="p8-photo"><img src={IMG + 'doctor.png'} alt="Saad" className="p8-px" style={{ width: 92 }} /></div>
-          <div className="home-aside-txt">
-            <div className="ps">HI, I’M SAAD</div>
-            <div className="vt"><Typewriter text={D.profile.tagline} speed={24} /></div>
-          </div>
-        </div>
-        <div className="p8-pixbox home-menu">
-          <div className="ps p8-menu-title">MAIN MENU</div>
-          {MENU.map((m, i) => (
-            <div key={m.id} className={'p8-mi' + (i === sel ? ' is-sel' : '')}
-              onClick={() => go(m.id)} onMouseEnter={() => setSel(i)}>
-              <span className="p8-mi-cur">{i === sel ? <Cursor s={18} /> : null}</span>
-              {m.icon ? <img src={IMG + m.icon + '.png'} alt="" className="p8-px" style={{ width: 22 }} /> : <Pill c={m.pill} s={18} />}
-              <span className="vt p8-mi-k">{m.label}</span>
-              <span className="vt p8-mi-note">{m.note}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+// ---- HOME is now the walkable Overworld (see overworld.jsx) ----
 
 // ---- MANUSCRIPTS ----
 function Manuscripts({ sel, setSel }) {
@@ -200,33 +166,30 @@ const TITLES = { manuscripts: 'MANUSCRIPTS', websites: 'WEBSITES', about: 'ABOUT
 
 function App() {
   const [view, setView] = useState('home');
-  const [homeSel, setHomeSel] = useState(0);
+  const [cameFrom, setCameFrom] = useState(null);
   const [mssSel, setMssSel] = useState(0);
+
+  const goHome = () => { setCameFrom(view); setView('home'); };
 
   useEffect(() => {
     function onKey(e) {
-      if (view === 'home') {
-        if (e.key === 'ArrowDown') { setHomeSel((s) => (s + 1) % MENU.length); e.preventDefault(); }
-        else if (e.key === 'ArrowUp') { setHomeSel((s) => (s - 1 + MENU.length) % MENU.length); e.preventDefault(); }
-        else if (e.key === 'Enter') { setView(MENU[homeSel].id); }
-      } else {
-        if (e.key === 'Escape' || e.key === 'Backspace') { setView('home'); e.preventDefault(); }
-        else if (view === 'manuscripts') {
-          if (e.key === 'ArrowDown') { setMssSel((s) => (s + 1) % D.manuscripts.length); e.preventDefault(); }
-          else if (e.key === 'ArrowUp') { setMssSel((s) => (s - 1 + D.manuscripts.length) % D.manuscripts.length); e.preventDefault(); }
-        }
+      if (view === 'home') return; // overworld owns its own keys
+      if (e.key === 'Escape' || e.key === 'Backspace') { goHome(); e.preventDefault(); }
+      else if (view === 'manuscripts') {
+        if (e.key === 'ArrowDown') { setMssSel((s) => (s + 1) % D.manuscripts.length); e.preventDefault(); }
+        else if (e.key === 'ArrowUp') { setMssSel((s) => (s - 1 + D.manuscripts.length) % D.manuscripts.length); e.preventDefault(); }
       }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [view, homeSel]);
+  }, [view]);
 
   const crumb = view === 'home' ? ('MD CANDIDATE · ' + D.profile.classOf) : TITLES[view];
   const hint = view === 'home'
-    ? <><span><span className="key">↑↓</span> move</span><span><span className="key">↵</span> select</span></>
+    ? <><span><span className="key">↑↓←→</span> / <span className="key">WASD</span> walk</span><span><span className="key">↵</span> enter building</span><span>or use the menu</span></>
     : view === 'manuscripts'
       ? <><span><span className="key">↑↓</span> browse</span><span><span className="key">esc</span> back</span><span>click <b>VIEW</b> to open</span></>
-      : <><span><span className="key">esc</span> back to menu</span><span>click a card to open</span></>;
+      : <><span><span className="key">esc</span> back to town</span><span>click a card to open</span></>;
 
   return (
     <div className="app p8-tile">
@@ -238,14 +201,14 @@ function App() {
         </div>
         <div className="p8-hud-r">
           {view !== 'home'
-            ? <span className="back-chip" onClick={() => setView('home')}>◂ BACK</span>
-            : <span className="app-crumb">press <b>↵</b> to explore</span>}
+            ? <span className="back-chip" onClick={goHome}>◂ BACK</span>
+            : <span className="app-crumb">walk up to a building or use the menu</span>}
         </div>
       </div>
 
-      <div className={'app-main' + (view === 'home' ? ' app-main-center' : '')}>
+      <div className={'app-main' + (view === 'home' ? ' app-main-center app-main-ow' : '')}>
         <div key={view}>
-          {view === 'home' && <Home sel={homeSel} setSel={setHomeSel} go={setView} />}
+          {view === 'home' && <Overworld go={setView} spawn={cameFrom} />}
           {view === 'manuscripts' && <Manuscripts sel={mssSel} setSel={setMssSel} />}
           {view === 'websites' && <Websites />}
           {view === 'about' && <About />}

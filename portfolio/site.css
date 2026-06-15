@@ -164,3 +164,154 @@ body.app-body { background-color: var(--bg); }
   .app-main { padding: 26px 16px 18px; }
   .view-head .ps { font-size: 17px; }
 }
+
+
+/* mobile support */
+@media (max-width: 900px) {
+  .app-main {
+    padding: 18px 10px 14px;
+  }
+  .app-main.app-main-center {
+    align-items: flex-start;
+    padding-top: 14px;
+  }
+  .view {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .view-head {
+    margin: 0 2px 14px;
+    gap: 10px;
+  }
+  .view-head .ps {
+    font-size: 18px;
+  }
+  .view-head .vh-count {
+    font-size: 18px;
+  }
+  .hint {
+    display: none !important;
+  }
+  .app-hud {
+    padding: 10px 12px;
+  }
+  .app-crumb {
+    display: none;
+  }
+  .p8-hud-sub {
+    font-size: 17px;
+  }
+
+  /* ABOUT page */
+  .about-wrap {
+    width: 100%;
+    max-width: 420px;
+    gap: 16px;
+    margin: 0 auto;
+  }
+  .p8-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .p8-card-top {
+    padding: 10px 12px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .p8-card-top .ps {
+    font-size: 10px !important;
+  }
+  .p8-card-top .vt {
+    font-size: 16px !important;
+  }
+  .p8-card-body {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 12px 8px;
+  }
+  .p8-card-photo {
+    width: 110px;
+    height: 110px;
+  }
+  .p8-card-photo img {
+    width: 88px !important;
+  }
+  .p8-card-info {
+    width: 100%;
+    min-width: 0;
+  }
+  .p8-card-info > .ps {
+    font-size: 18px !important;
+  }
+  .p8-card-role {
+    font-size: 18px;
+    margin: 4px 0 12px;
+  }
+  .p8-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .p8-stat {
+    padding: 6px 10px;
+  }
+  .p8-stat-k {
+    font-size: 16px;
+  }
+  .p8-stat-v {
+    font-size: 14px;
+  }
+  .p8-badges {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .p8-badges-l,
+  .p8-card-foot,
+  .about-bio p,
+  .contact-intro,
+  .contact-sub,
+  .web-desc,
+  .proj-blurb,
+  .mss-d-meta,
+  .mss-d-blurb {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .p8-card-foot {
+    font-size: 18px;
+    line-height: 1.3;
+    padding: 12px 12px 14px;
+  }
+  .about-bio,
+  .contact-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+  .about-bio .p8-pixbox {
+    padding: 14px 14px;
+  }
+  .about-bio p {
+    font-size: 20px;
+    line-height: 1.34;
+  }
+}
+
+@media (max-width: 540px) {
+  .app-main {
+    padding: 16px 8px 12px;
+  }
+  .p8-hud-sub {
+    font-size: 15px;
+  }
+  .about-bio p {
+    font-size: 18px;
+  }
+  .p8-card-role {
+    font-size: 17px;
+  }
+  .p8-card-foot {
+    font-size: 16px;
+  }
+}
