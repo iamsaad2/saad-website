@@ -10,7 +10,7 @@ window.SAAD_DATA = {
     interests: "Oncology · Cardiology · ML in medicine",
     bio: [
       "Hello — my name is Saad Badat and I’m a medical student at NEOMED.",
-      "Most of my work sits between oncology, cardiology, and machine learning, where I build tools that help clinicians work faster.",
+      "I like to do research in oncology and cardio-oncology, and I build websites!",
     ],
     stats: [
       ["MANUSCRIPTS", "01"],
@@ -27,7 +27,7 @@ window.SAAD_DATA = {
         "Trends in Long-Term Survival Among Patients With De Novo Metastatic Cancer",
       role: "First author",
       venue: "JCO Oncology Practice",
-      year: "2025",
+      year: "2026",
       type: "Original",
       blurb:
         "A population-level analysis of how long-term survival has changed over time among patients diagnosed with de novo metastatic cancer.",
