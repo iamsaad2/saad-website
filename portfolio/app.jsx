@@ -146,8 +146,8 @@ function Contact() {
       <div className="view-head"><span className="vh-arrow">▸</span><span className="ps">CONTACT</span></div>
       <div className="contact-wrap">
         <div className="p8-pixbox contact-box">
-          <p className="contact-intro">Want to collaborate or chat?</p>
-          <p className="contact-sub">Pick a channel — I usually reply within a day.</p>
+          <p className="contact-intro">Feel free to reach out!</p>
+          <p className="contact-sub">Email is usually the fastest way to get me.</p>
           <div className="contact-grid">
             {D.contact.map((c, i) => (
               <a key={i} className="contact-link" href={c.link} target="_blank" rel="noopener">
