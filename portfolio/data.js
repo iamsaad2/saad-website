@@ -44,7 +44,7 @@ window.SAAD_DATA = {
       status: "Live",
       pill: "coral",
       slot: "web-1",
-      url: "https://metspredictor.netlify.app/",
+      url: "https://primarycancerpredictor.netlify.app/",
       image: "portfolio/assets/website-screenshots/primary-site-predictor.png",
     },
     {
